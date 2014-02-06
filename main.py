@@ -29,12 +29,14 @@ class MyApp(object):
             content = "Words added: "
             for word in words[1:]:
                 if word not in self.word_list:
+                    content += word + " "
                     self.word_list.append(word)
         elif words[0] == "!removeword":
             print "Removing words"
-            content = "Words removed"
+            content = "Words removed: "
             for word in words[1:]:
                 if word in self.word_list:
+                    content += word + " "
                     self.word_list.remove(word)
         elif words[0] == "!list":
             content = "Words: " + ", ".join(self.word_list)
