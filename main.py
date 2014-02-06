@@ -62,7 +62,7 @@ class MyApp(object):
                 json_line = json.loads(line)
                 user = json_line['user']
                 if json_line['event'] == 'message' and user != self.my_user_id:
-                    content = json_line['content']
+                    content = json_line['content'].lower()
                     if len(content) > 0 and content[0] == '!':
                         self.handle_commands(content)
                     else:
